@@ -8,3 +8,27 @@
 <div>{{ "angular" }}</div>
 <div [attr.data-test]="title"></div>
 <img [src]="imgUrl" />
+
+<!-- 动态添加类名 -->
+<div [class.active]="true"></div>
+<div [ngClass]="{ active: true, error: true }"></div>
+
+<!-- 动态添加行内样式 -->
+<div [style.width]="'200px'"></div>
+<div
+  [ngStyle]="{ width: '200px', height: '200px', backgroundColor: 'pink' }"
+></div>
+
+<!-- 事件绑定 -->
+<!-- <button (click)="onClick($event)">button</button> -->
+<input type="text" (keyup.enter)="onKeyup()" />
+
+<!-- 获取原生DOM对象 -->
+<button #btn (click)="onClick(btn)">button</button>
+<p #paragraph>Hello Angular</p>
+<ul>
+  <li #items></li>
+  <li #items></li>
+  <li #items></li>
+  <li #items></li>
+</ul>
